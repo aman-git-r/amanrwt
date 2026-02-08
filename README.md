@@ -21,6 +21,8 @@ Output is in `dist/`. Deploy to Vercel, Netlify, or any static host.
 
 ## Customize
 
+- **Profile picture**: Put your photo at `public/profile.jpg` (or edit `PROFILE_IMAGE` in `src/components/Nav.tsx`). If the image is missing, a placeholder avatar is shown.
+- **Dark / light mode**: Toggle in the nav (sun/moon icon). Preference is saved in `localStorage` and used on next visit.
 - **Hero**: Edit `src/components/Hero.tsx` — name, bio, and role labels in the typewriter.
 - **About**: `src/components/About.tsx` — your story and the code snippet.
 - **Skills**: `src/components/Skills.tsx` — categories and tags.
