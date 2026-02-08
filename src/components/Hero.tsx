@@ -8,6 +8,7 @@ export function Hero() {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
+  // Typewriter effect for the role
   useEffect(() => {
     const current = ROLES[roleIndex];
     const timeout = setTimeout(
@@ -39,7 +40,7 @@ export function Hero() {
         <p className="hero-greeting">
           <span className="hero-prompt">$</span> hi, I'm
         </p>
-        <h1 className="hero-name">Your Name</h1>
+        <h1 className="hero-name">Aman Rawat</h1>
         <p className="hero-role">
           <span className="cursor-blink">{displayText}</span>
         </p>
