@@ -1,10 +1,10 @@
 import "./Contact.css";
 
 const LINKS = [
-  { label: "GitHub", href: "https://github.com", aria: "GitHub profile" },
-  { label: "LinkedIn", href: "https://linkedin.com", aria: "LinkedIn profile" },
-  { label: "Twitter / X", href: "https://twitter.com", aria: "Twitter profile" },
-  { label: "Email", href: "mailto:you@example.com", aria: "Send email" },
+  { label: "GitHub", href: "https://github.com/aman-git-r", aria: "GitHub profile" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/aman-rwt", aria: "LinkedIn profile" },
+  // { label: "Twitter / X", href: "https://twitter.com", aria: "Twitter profile" },
+  { label: "Email", href: "mailto:amanrawat4060@gmail.com", aria: "Send email" },
 ];
 
 export function Contact() {
