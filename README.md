@@ -17,7 +17,17 @@ Open [http://localhost:5173](http://localhost:5173).
 npm run build
 ```
 
-Output is in `dist/`. Deploy to Vercel, Netlify, or any static host.
+Output is in `dist/`.
+
+## Deploy to GitHub Pages
+
+1. Push this repo to GitHub (e.g. `amanrwt` or your repo name).
+2. In the repo: **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Ensure `base` in `vite.config.ts` matches your repo name:
+   - Repo `amanrwt` → `base: "/amanrwt/"`
+   - Repo `amvn_rwt` → `base: "/amvn_rwt/"`
+5. Push to the `main` branch. The workflow will build and deploy. Your site will be at `https://<username>.github.io/<repo-name>/`.
 
 ## Customize
 
