@@ -13,8 +13,8 @@ export function Contact() {
       <p className="section-title">/contact</p>
       <h2 className="section-heading">Get in touch</h2>
       <p className="contact-intro">
-        I'm open to new opportunities and side projects. Say hi — I'll do my
-        best to reply.
+        I'm open to new opportunities and side projects. Say hi — I'll get back
+        to you.
       </p>
       <div className="contact-links">
         {LINKS.map(({ label, href, aria }) => (

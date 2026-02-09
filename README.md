@@ -1,6 +1,6 @@
-# Software Engineer Portfolio
+# Aman Rawat — Software Engineer Portfolio
 
-A modern, developer-style portfolio built with **React**, **TypeScript**, and **Vite**.
+My portfolio site: developer-style layout built with **React**, **TypeScript**, and **Vite**. Dark/light mode, typewriter hero, and responsive layout. Static site, deploy anywhere.
 
 ## Run locally
 

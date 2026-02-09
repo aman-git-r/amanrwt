@@ -11,13 +11,11 @@ const LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
-/** Replace with your profile image: put `profile.jpg` in the `public` folder, or use another path. */
-const PROFILE_IMAGE = "/profile.jpg";
 const PROFILE_PLACEHOLDER = "/profile-placeholder.svg";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [avatarSrc, setAvatarSrc] = useState(PROFILE_IMAGE);
+  const [avatarSrc, setAvatarSrc] = useState(aman_rwt);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -34,7 +32,7 @@ export function Nav() {
     >
       <a href="#hero" className="nav-avatar-link" aria-label="Home">
         <img
-          src={aman_rwt}
+          src={avatarSrc}
           alt="Profile"
           className="nav-avatar"
           onError={() => setAvatarSrc(PROFILE_PLACEHOLDER)}
