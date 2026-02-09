@@ -18,12 +18,11 @@ const PROJECTS = [
     repo: "#",
   },
   {
-    title: "Project Gamma",
-    description:
-      "Open-source library for Z. Used in production by a few teams. Docs, tests, and semantic versioning.",
+    title: "luxuryliving.in",
+    description: "A website for a luxury living company",
     tech: ["TypeScript", "Jest", "Docs"],
-    href: "#",
-    repo: "#",
+    href: "https://www.luxuryliving.in",
+    repo: "",
   },
 ];
 
@@ -36,7 +35,7 @@ export function Projects() {
         {PROJECTS.map((project) => (
           <article key={project.title} className="project-card">
             <h3 className="project-title">
-              <a href={project.href}>{project.title}</a>
+              <a href={project.href} target="_blank" rel="noopener noreferrer">{project.title}</a>
             </h3>
             <p className="project-desc">{project.description}</p>
             <div className="project-tech">
