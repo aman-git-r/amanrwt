@@ -1,3 +1,4 @@
+import aman_rwt from "../assets/aman_rwt.jpg"
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 import "./Nav.css";
@@ -33,7 +34,7 @@ export function Nav() {
     >
       <a href="#hero" className="nav-avatar-link" aria-label="Home">
         <img
-          src={avatarSrc}
+          src={aman_rwt}
           alt="Profile"
           className="nav-avatar"
           onError={() => setAvatarSrc(PROFILE_PLACEHOLDER)}
