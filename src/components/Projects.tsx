@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     title: "luxuryliving.in",
     description: "A website for a luxury living company",
-    tech: ["TypeScript", "Jest", "Docs"],
+    tech: ["React","TypeScript", "Tailwind", "Vite"],
     href: "https://www.luxuryliving.in",
     repo: "",
   },
