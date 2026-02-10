@@ -58,7 +58,6 @@ export function Hero() {
             </a>
           </div>
         </div>
-
         <div className="hero-code-wrapper" aria-hidden="true">
           <div className="hero-code-window">
             <div className="hero-code-header">
@@ -68,13 +67,17 @@ export function Hero() {
               <span className="hero-code-title">portfolio.tsx</span>
             </div>
             <pre className="hero-code-body">
-{`type Tech = "React" | "TypeScript" | "Node" | "Design";
+{`type Tech = "React" | "TypeScript" | "Node" | 
+            "Design";
 
 const aman: Engineer = {
   role: "Software Engineer",
   location: "India",
-  stack: ["React", "TypeScript", "Node"],
-  focus: ["DX", "performance", "clean UI"],
+  stack: [
+    "React", "TypeScript", "Node.js",
+    "Python", "Golang", "Django"
+  ],
+  focus: ["DX", "performance", "scale" "clean UI"],
 };`}
             </pre>
           </div>
