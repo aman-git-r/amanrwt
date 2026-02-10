@@ -3,26 +3,24 @@ import "./Projects.css";
 const PROJECTS = [
   {
     title: "cy5.io",
-    description:
-      "A full-stack app for X — built with React, Node, and PostgreSQL. Handles auth, real-time updates, and deployment on Vercel.",
-    tech: ["WordPress", "CSS", "HTML", "JavaScript"],
+    description: "A website for cy5.io built with WordPress, CSS, HTML, and JavaScript",
+    tech: ["WordPress", "CSS", "HTML", "JavaScript", "Elementor"],
     href: "https://cy5.io",
     repo: "",
     image: "/projects/cy5.png",
   },
   {
     title: "oceanhugs.in",
-    description:
-      "CLI tool and dashboard for automating Y. TypeScript, REST API, and simple UI for non-technical users.",
-    tech: ["TypeScript", "React", "Vite"],
+    description: "A website for oceanhugs.in built with HTML, CSS, JavaScript, React, SASS, Vite, and REST API",
+    tech: ["HTML", "CSS", "JavaScript", "React", "SASS",],
     href: "https://oceanhugs.in",
     repo: "",
     image: "/projects/oceanhugs.png",
   },
   {
     title: "luxuryliving.in",
-    description: "A website for a luxury living company",
-    tech: ["React", "TypeScript", "Tailwind", "Vite", "REST API"],
+    description: "A website for a luxury living company built with HTML, CSS, JavaScript, React, SASS, Vite, and REST API",
+    tech: ["HTML", "CSS", "JavaScript", "React", "SASS", "Vite", "REST API"],
     href: "https://www.luxuryliving.in",
     repo: "",
     image: "/projects/luxuryliving.png",

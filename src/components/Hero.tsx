@@ -36,25 +36,48 @@ export function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-grid" aria-hidden="true" />
-      <div className="hero-content">
-        <p className="hero-greeting">
-          <span className="hero-prompt">$</span> hi, I'm
-        </p>
-        <h1 className="hero-name">Aman Rawat</h1>
-        <p className="hero-role">
-          <span className="cursor-blink">{displayText}</span>
-        </p>
-        <p className="hero-bio">
-          I build things for the web — clean code, thoughtful UX, and systems
-          that scale.
-        </p>
-        <div className="hero-cta">
-          <a href="#projects" className="btn btn-primary">
-            View work
-          </a>
-          <a href="#contact" className="btn btn-ghost">
-            Get in touch
-          </a>
+      <div className="hero-layout">
+        <div className="hero-content">
+          <p className="hero-greeting">
+            <span className="hero-prompt">$</span> hi, I'm
+          </p>
+          <h1 className="hero-name">Aman Rawat</h1>
+          <p className="hero-role">
+            <span className="cursor-blink">{displayText}</span>
+          </p>
+          <p className="hero-bio">
+            I'm Aman — I build for the web with clean code, clear UX, and
+            systems that scale. Here's what I've been working on.
+          </p>
+          <div className="hero-cta">
+            <a href="#projects" className="btn btn-primary">
+              View work
+            </a>
+            <a href="#contact" className="btn btn-ghost">
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-code-wrapper" aria-hidden="true">
+          <div className="hero-code-window">
+            <div className="hero-code-header">
+              <span className="hero-code-dot hero-code-dot-red" />
+              <span className="hero-code-dot hero-code-dot-yellow" />
+              <span className="hero-code-dot hero-code-dot-green" />
+              <span className="hero-code-title">portfolio.tsx</span>
+            </div>
+            <pre className="hero-code-body">
+{`type Tech = "React" | "TypeScript" | "Node" | "Design";
+
+const aman: Engineer = {
+  role: "Software Engineer",
+  location: "India",
+  stack: ["React", "TypeScript", "Node"],
+  focus: ["DX", "performance", "clean UI"],
+};`}
+            </pre>
+          </div>
         </div>
       </div>
     </section>
