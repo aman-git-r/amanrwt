@@ -24,9 +24,9 @@ const PROJECTS: Project[] = [
     description:
       "An end-to-end cloud security platform with dashboards, alerts, and RBAC — built across React UI, FastAPI APIs, and Python services.",
     tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
-    href: "#",
+    href: "https://ion.cy5.io",
     repo: "",
-    image: "/projects/cloud-security.png",
+    image: "/projects/cloud-security.webp",
     type: "platform",
     isFeatured: true,
     highlights: [
@@ -161,7 +161,7 @@ export function Projects() {
               className="project-link"
               aria-label={`View ${project.title}`}
             >
-              Live →
+              Live
             </a>
             {project.repo && (
               <a
