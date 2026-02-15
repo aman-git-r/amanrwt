@@ -2,9 +2,9 @@ import "./Skills.css";
 
 const SKILLS = [
   { category: "Languages", items: ["TypeScript", "JavaScript", "Python", "Go", "SQL"] },
-  { category: "Frontend", items: ["React", "Next.js", "HTML/CSS", "Tailwind"] },
+  { category: "Frontend", items: ["React", "Next.js", "D3.js", "Shadcn", "HTML/CSS", "Tailwind"] },
   { category: "Backend", items: ["Node.js", "REST APIs", "FastAPI", "PostgreSQL", "Redis"] },
-  { category: "Tools", items: ["Git", "Docker", "Kubernetes", "Vite", "Figma"] },
+  { category: "Tools", items: ["Git", "Docker", "Cursor", "Kubernetes", "Vite", "Figma"] },
 ];
 
 export function Skills() {

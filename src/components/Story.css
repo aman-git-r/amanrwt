@@ -13,7 +13,7 @@
 @media (min-width: 900px) {
   .story-layout {
     grid-template-columns: 320px 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 
@@ -362,18 +362,6 @@
 /* ----- Timeline (right column) ----- */
 .story-timeline {
   position: relative;
-  padding-left: 1.5rem;
-}
-
-.story-timeline::before {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  width: 2px;
-  background: linear-gradient(180deg, var(--accent), var(--border), var(--border));
-  border-radius: 2px;
 }
 
 .story-chapter {
@@ -385,35 +373,22 @@
   padding-bottom: 0;
 }
 
-.story-chapter-marker {
-  position: absolute;
-  left: -1.5rem;
-  top: 0.6rem;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
-  background: var(--bg);
-  border: 2px solid var(--border);
-  border-radius: 50%;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.story-chapter-active .story-chapter-marker {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
 .story-chapter-content {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
   padding: 1.25rem 1.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  transition: background 0.25s ease, backdrop-filter 0.25s ease, box-shadow 0.25s ease;
 }
 
-.story-chapter-active .story-chapter-content {
-  border-color: var(--accent-dim);
-  box-shadow: 0 0 0 1px var(--accent-glow);
+.story-chapter-content:hover {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .story-chapter-content:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .story-chapter-year {
@@ -422,13 +397,15 @@
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  display: block;
 }
 
 .story-chapter-title {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: var(--text);
-  margin: 0.25rem 0 0.25rem;
+  margin: 0.15rem 0 0.2rem;
+  letter-spacing: -0.02em;
 }
 
 .story-chapter-subtitle {
@@ -442,11 +419,11 @@
   padding-left: 1.25rem;
   color: var(--text-muted);
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .story-chapter-points li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 
 .story-chapter-points li:last-child {

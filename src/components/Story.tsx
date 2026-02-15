@@ -6,9 +6,9 @@ type Phase = "education" | "firstCompany" | "secondCompany";
 const CHAPTERS: { id: Phase; year: string; title: string; subtitle?: string; points: string[] }[] = [
   {
     id: "education",
-    year: "2016 – 2020",
+    year: "2018 – 2022",
     title: "Education",
-    subtitle: "Bachelor's in Computer Science",
+    subtitle: "Bachelor's in Computer Science & Engineering",
     points: [
       "Built a strong foundation in algorithms, data structures, and software engineering.",
       "Worked on academic projects spanning web development and databases.",
@@ -18,7 +18,7 @@ const CHAPTERS: { id: Phase; year: string; title: string; subtitle?: string; poi
   {
     id: "firstCompany",
     year: "2020 – 2022",
-    title: "First company",
+    title: "LX Marketing Private Limited",
     subtitle: "Where it all began",
     points: [
       "Joined as a software engineer and shipped my first production features.",
@@ -155,7 +155,6 @@ export function Story() {
               className={`story-chapter ${activePhase === chapter.id ? "story-chapter-active" : ""}`}
               data-phase={chapter.id}
             >
-              <div className="story-chapter-marker" />
               <div className="story-chapter-content">
                 <span className="story-chapter-year">{chapter.year}</span>
                 <h3 className="story-chapter-title">{chapter.title}</h3>
