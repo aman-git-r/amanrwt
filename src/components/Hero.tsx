@@ -75,7 +75,7 @@ const aman: Engineer = {
   location: "India",
   stack: [
     "React", "TypeScript", "Node.js",
-    "Python", "Golang", "Django"
+    "Python", "Golang", "FastAPI"
   ],
   focus: ["DX", "performance", "scale" "clean UI"],
 };`}
