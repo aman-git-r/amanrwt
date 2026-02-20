@@ -161,6 +161,22 @@
   color: var(--accent);
 }
 
+[data-theme="light"] .projects-tab {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .projects-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+[data-theme="light"] .projects-tab-active {
+  background: rgba(8, 145, 178, 0.14);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .project-title a {
   color: var(--text);
 }
@@ -190,6 +206,11 @@
   background: var(--accent-glow);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
+}
+
+[data-theme="light"] .project-tag {
+  background: rgba(8, 145, 178, 0.14);
+  color: var(--accent);
 }
 
 .project-links {

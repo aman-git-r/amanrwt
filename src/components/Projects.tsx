@@ -41,7 +41,7 @@ const PROJECTS: Project[] = [
     description:
       "Full-stack hotel management app handling bookings, rooms, and guests with an admin dashboard and REST APIs.",
     tech: ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    href: "#",
+    href: "https://the-grand-hotel-amaze.netlify.app",
     repo: "",
     image: "/projects/hotel-platform.png",
     type: "platform",
@@ -52,9 +52,9 @@ const PROJECTS: Project[] = [
     description:
       "A Pinterest-like responsive gallery with masonry layout, search, and saved collections.",
     tech: ["React", "TypeScript", "Vite"],
-    href: "#",
-    repo: "",
-    image: "/projects/pinterest-clone.png",
+    href: "https://picser-amaze.netlify.app",
+    repo: "https://github.com/aman-git-r/picser",
+    image: "/projects/picser.png",
     type: "web",
     category: "webapp",
   },
