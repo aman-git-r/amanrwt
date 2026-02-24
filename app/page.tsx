@@ -4,7 +4,7 @@ export default function Home() {
       <main className="mx-auto max-w-2xl px-6 py-24 sm:py-32">
         <header className="space-y-4">
           <h1 className="text-4xl font-medium tracking-tight text-ctp-text sm:text-5xl">
-            Aman Rwt
+            Aman Rawat
           </h1>
           <p className="font-mono text-sm text-ctp-mauve sm:text-base">
             Software Engineer
