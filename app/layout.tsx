@@ -15,23 +15,23 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Aman Rwt | Software Engineer',
-        template: '%s | Aman Rwt',
+        default: 'Aman Rawat | Software Engineer',
+        template: '%s | Aman Rawat',
     },
     description:
         'Software engineer with 3+ years of experience. Portfolio and projects.',
     metadataBase: new URL('https://amanrwt.com'),
     openGraph: {
-        title: 'Aman Rwt | Software Engineer',
+        title: 'Aman Rawat | Software Engineer',
         description:
             'Software engineer with 3+ years of experience. Portfolio and projects.',
         url: 'https://amanrwt.com',
-        siteName: 'Aman Rwt',
+        siteName: 'Aman Rawat',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Aman Rwt | Software Engineer',
+        title: 'Aman Rawat | Software Engineer',
         description:
             'Software engineer with 3+ years of experience. Portfolio and projects.',
     },
