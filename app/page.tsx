@@ -1,20 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/app/components/Button";
 import { ProjectTabs } from "@/app/components/ProjectTabs";
+import { skillsList } from "@/app/data/skills";
 import {
-    SiTypescript,
-    SiReact,
-    SiNextdotjs,
-    SiNodedotjs,
-    SiPython,
-    SiGit,
-    SiDocker,
-    SiKubernetes,
     SiGithub,
     SiLinkedin,
     SiLeetcode,
 } from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
 const contacts = [
@@ -22,18 +14,6 @@ const contacts = [
     { label: "LinkedIn", href: "https://linkedin.com/in/aman-rwt", Icon: SiLinkedin },
     { label: "GitHub", href: "https://github.com/aman-git-r", Icon: SiGithub },
     { label: "LeetCode", href: "https://leetcode.com/u/aman-rwt", Icon: SiLeetcode },
-] as const;
-
-const skills = [
-    { name: "TypeScript", Icon: SiTypescript },
-    { name: "React", Icon: SiReact },
-    { name: "Next.js", Icon: SiNextdotjs },
-    { name: "Node.js", Icon: SiNodedotjs },
-    { name: "Python", Icon: SiPython },
-    { name: "SQL", Icon: FaDatabase },
-    { name: "Git", Icon: SiGit },
-    { name: "Docker", Icon: SiDocker },
-    { name: "Kubernetes", Icon: SiKubernetes },
 ] as const;
 
 export default function Home() {
@@ -88,9 +68,9 @@ export default function Home() {
                                 Skills & tools
                             </h3>
                             <ul className="mt-3 flex w-4/5 flex-wrap gap-2">
-                                {skills.map(({ name, Icon }) => (
+                                {skillsList.map(({ id, name, Icon }) => (
                                     <li
-                                        key={name}
+                                        key={id}
                                         className="group flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:bg-ctp-surface0 hover:text-ctp-mauve"
                                     >
                                         <Icon

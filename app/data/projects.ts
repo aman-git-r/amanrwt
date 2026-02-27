@@ -1,3 +1,5 @@
+import type { SkillId } from '@/app/data/skills';
+
 export type ProjectCategory =
     | 'websites'
     | 'web-apps'
@@ -10,7 +12,7 @@ export interface Project {
     title: string;
     category: ProjectCategory;
     description: string;
-    techStack: string[];
+    techStack: SkillId[];
     liveUrl?: string;
     repoUrl?: string;
     image: string;
@@ -31,7 +33,7 @@ export const projects: Project[] = [
         category: 'websites',
         description:
             'Personal portfolio built with Next.js and Tailwind. Catppuccin theme, accessible tabs, and a calm reading experience.',
-        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+        techStack: ['nextjs', 'typescript', 'react'],
         liveUrl: 'https://amanrwt.com',
         repoUrl: 'https://github.com/yourusername/amanrwt',
         image: '/projects/placeholder.svg',
@@ -42,7 +44,7 @@ export const projects: Project[] = [
         category: 'websites',
         description:
             'Reddit clone built with Next.js and Tailwind. Catppuccin theme, accessible tabs, and a calm reading experience.',
-        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+        techStack: ['nextjs', 'typescript', 'react'],
         liveUrl: 'https://amanrwt.com',
         repoUrl: 'https://github.com/yourusername/amanrwt',
         image: '/projects/placeholder.svg',

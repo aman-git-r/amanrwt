@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { Project } from '@/app/data/projects';
+import { SKILLS } from '@/app/data/skills';
 import { Button } from '@/app/components/Button';
 
 interface ProjectCardProps {
@@ -33,14 +34,24 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <p className="mt-2 text-base leading-relaxed text-ctp-subtext0">{description}</p>
 
             <ul className="mt-3 flex flex-wrap gap-2" aria-label="Tech stack">
-                {techStack.map((tech) => (
-                    <li
-                        key={tech}
-                        className="rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:bg-ctp-surface0 hover:text-ctp-mauve"
-                    >
-                        {tech}
-                    </li>
-                ))}
+                {techStack.map((skillId) => {
+                    const skill = SKILLS[skillId];
+                    if (!skill) return null;
+                    const { id, name, Icon } = skill;
+
+                    return (
+                        <li
+                            key={id}
+                            className="group flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:bg-ctp-surface0 hover:text-ctp-mauve"
+                        >
+                            <Icon
+                                className="size-4 shrink-0 text-ctp-subtext1 transition-colors duration-200 group-hover:text-ctp-mauve"
+                                aria-hidden
+                            />
+                            <span>{name}</span>
+                        </li>
+                    );
+                })}
             </ul>
 
             <div className="mt-4 flex flex-wrap gap-3">
