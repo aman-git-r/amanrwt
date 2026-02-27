@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { JetBrains_Mono, Fraunces } from 'next/font/google';
+import { Nav } from '@/app/components/Nav';
 import { ThemeToggle } from '@/app/components/ThemeToggle';
 import './globals.css';
 
@@ -65,6 +66,7 @@ export default function RootLayout({
             <body
                 className={`${fraunces.variable} ${jetbrainsMono.variable} font-sans antialiased`}
             >
+                <Nav />
                 {children}
                 <ThemeToggle />
             </body>
