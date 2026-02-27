@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { Project } from '@/app/data/projects';
+import { Button } from '@/app/components/Button';
 
 interface ProjectCardProps {
     project: Project;
@@ -44,24 +45,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
             <div className="mt-4 flex flex-wrap gap-3">
                 {liveUrl && (
-                    <a
-                        href={liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-none border-0 bg-ctp-mauve px-5 py-3 font-medium text-ctp-base shadow-[0_4px_0_0_var(--ctp-surface0)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_var(--ctp-surface0)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--ctp-surface0)]"
-                    >
+                    <Button href={liveUrl} variant="primary" external>
                         Live
-                    </a>
+                    </Button>
                 )}
                 {repoUrl && (
-                    <a
-                        href={repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-none border-2 border-ctp-surface1 bg-transparent px-5 py-3 font-medium text-ctp-text shadow-[0_4px_0_0_var(--ctp-crust)] transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:shadow-[0_6px_0_0_var(--ctp-crust)] hover:text-ctp-mauve active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--ctp-crust)]"
-                    >
+                    <Button href={repoUrl} variant="secondary" external>
                         Repo
-                    </a>
+                    </Button>
                 )}
             </div>
         </article>

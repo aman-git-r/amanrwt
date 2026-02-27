@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@/app/components/Button";
 import { ProjectTabs } from "@/app/components/ProjectTabs";
 import {
     SiTypescript,
@@ -17,10 +18,10 @@ import { FaDatabase } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
 const contacts = [
-    { label: "Email", href: "mailto:your@email.com", Icon: HiOutlineMail },
-    { label: "LinkedIn", href: "https://linkedin.com/in/yourprofile", Icon: SiLinkedin },
-    { label: "GitHub", href: "https://github.com/yourusername", Icon: SiGithub },
-    { label: "LeetCode", href: "https://leetcode.com/u/yourusername", Icon: SiLeetcode },
+    { label: "Email", href: "mailto:amanrawat4060@gmail.com", Icon: HiOutlineMail },
+    { label: "LinkedIn", href: "https://linkedin.com/in/aman-rwt", Icon: SiLinkedin },
+    { label: "GitHub", href: "https://github.com/aman-git-r", Icon: SiGithub },
+    { label: "LeetCode", href: "https://leetcode.com/u/aman-rwt", Icon: SiLeetcode },
 ] as const;
 
 const skills = [
@@ -51,18 +52,12 @@ export default function Home() {
                         warm, calm corner of the web.
                     </p>
                     <div className="flex flex-wrap gap-3 pt-2">
-                        <Link
-                            href="#projects"
-                            className="inline-flex items-center justify-center rounded-none border-0 bg-ctp-mauve px-5 py-3 font-medium text-ctp-base shadow-[0_4px_0_0_var(--ctp-surface0)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_var(--ctp-surface0)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--ctp-surface0)]"
-                        >
+                        <Button href="#projects" variant="primary">
                             See my work
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center justify-center rounded-none border-2 border-ctp-surface1 bg-transparent px-5 py-3 font-medium text-ctp-text shadow-[0_4px_0_0_var(--ctp-crust)] transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:shadow-[0_6px_0_0_var(--ctp-crust)] hover:text-ctp-mauve active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--ctp-crust)]"
-                        >
+                        </Button>
+                        <Button href="/contact" variant="secondary">
                             Get in touch
-                        </Link>
+                        </Button>
                     </div>
                 </header>
 
