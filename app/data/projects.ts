@@ -37,13 +37,24 @@ export const projects: Project[] = [
         image: '/projects/placeholder.svg',
     },
     {
-        id: 'cli-demo',
-        title: 'CLI tool example',
-        category: 'cli-tools',
+        id: 'reddit-clone',
+        title: 'Reddit clone',
+        category: 'websites',
         description:
-            'A small command-line utility for local development. Demonstrates parsing, config loading, and clear help output.',
-        techStack: ['Node.js', 'TypeScript', 'Commander'],
-        repoUrl: 'https://github.com/yourusername/example-cli',
+            'Reddit clone built with Next.js and Tailwind. Catppuccin theme, accessible tabs, and a calm reading experience.',
+        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+        liveUrl: 'https://amanrwt.com',
+        repoUrl: 'https://github.com/yourusername/amanrwt',
         image: '/projects/placeholder.svg',
     },
+    // {
+    //     id: 'cli-demo',
+    //     title: 'CLI tool example',
+    //     category: 'cli-tools',
+    //     description:
+    //         'A small command-line utility for local development. Demonstrates parsing, config loading, and clear help output.',
+    //     techStack: ['Node.js', 'TypeScript', 'Commander'],
+    //     repoUrl: 'https://github.com/yourusername/example-cli',
+    //     image: '/projects/placeholder.svg',
+    // },
 ];

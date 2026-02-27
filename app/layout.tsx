@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { JetBrains_Mono, Fraunces } from 'next/font/google';
+import { ThemeToggle } from '@/app/components/ThemeToggle';
 import './globals.css';
 
 const jetbrainsMono = JetBrains_Mono({
@@ -53,11 +54,19 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="theme-mocha">
+        <html lang="en" suppressHydrationWarning>
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(){var t=localStorage.getItem('theme')||'mocha';document.documentElement.className='theme-'+t;})();`,
+                    }}
+                />
+            </head>
             <body
                 className={`${fraunces.variable} ${jetbrainsMono.variable} font-sans antialiased`}
             >
                 {children}
+                <ThemeToggle />
             </body>
         </html>
     );
