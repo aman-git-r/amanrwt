@@ -71,7 +71,7 @@ export default function Home() {
                                 {skillsList.map(({ id, name, Icon }) => (
                                     <li
                                         key={id}
-                                        className="group flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:bg-ctp-surface0 hover:text-ctp-mauve"
+                                        className="group flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:text-ctp-mauve [.theme-mocha_&]:hover:bg-ctp-surface0"
                                     >
                                         <Icon
                                             className="size-4 shrink-0 text-ctp-subtext1 transition-colors duration-200 group-hover:text-ctp-mauve"
