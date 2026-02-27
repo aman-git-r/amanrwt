@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProjectTabs } from "@/app/components/ProjectTabs";
 import {
     SiTypescript,
     SiReact,
@@ -51,7 +52,7 @@ export default function Home() {
                     </p>
                     <div className="flex flex-wrap gap-3 pt-2">
                         <Link
-                            href="/projects"
+                            href="#projects"
                             className="inline-flex items-center justify-center rounded-none border-0 bg-ctp-mauve px-5 py-3 font-medium text-ctp-base shadow-[0_4px_0_0_var(--ctp-surface0)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_var(--ctp-surface0)] active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--ctp-surface0)]"
                         >
                             See my work
@@ -108,6 +109,8 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+
+                <ProjectTabs />
             </main>
 
             <footer
@@ -145,7 +148,7 @@ export default function Home() {
                                 <ul className="flex flex-wrap gap-x-6 gap-y-2">
                                     <li>
                                         <Link
-                                            href="/projects"
+                                            href="#projects"
                                             className="font-mono text-sm text-ctp-subtext0 transition-colors hover:text-ctp-mauve"
                                         >
                                             Projects
