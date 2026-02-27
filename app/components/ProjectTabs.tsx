@@ -17,16 +17,22 @@ export function ProjectTabs() {
     const [activeCategory, setActiveCategory] = useState<ProjectCategory>('websites');
     const [focusedIndex, setFocusedIndex] = useState(0);
     const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+    const hasUserNavigated = useRef(false);
 
     const filteredProjects = filterByCategory(projects, activeCategory);
     const tabCount = PROJECT_CATEGORIES.length;
 
     useEffect(() => {
-        tabRefs.current[focusedIndex]?.focus();
-    }, [focusedIndex]);
+        const shouldFocus = hasUserNavigated.current;
+        if (shouldFocus) {
+            tabRefs.current[focusedIndex]?.focus();
+        }
+    }, [focusedIndex, activeCategory]);
 
     const handleKeyDown = useCallback(
         (e: React.KeyboardEvent) => {
+            hasUserNavigated.current = true;
+
             if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
                 e.preventDefault();
                 const next = (focusedIndex - 1 + tabCount) % tabCount;
