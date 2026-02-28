@@ -116,65 +116,13 @@ body {
     color: var(--ctp-selection-fg);
 }
 
-/* Nav: liquid glass with vibrancy (strong blur + translucent base so background shows through) */
+/* Nav: blur + vibrancy (opaque frosted glass so content behind is not visible) */
 .nav-glass {
-    position: relative;
-    overflow: hidden;
-    /* Vibrancy: more transparent base so blur and content behind show through */
-    background: color-mix(in srgb, var(--ctp-mantle) 68%, transparent);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid color-mix(in srgb, var(--ctp-surface1) 85%, transparent);
+    background: color-mix(in srgb, var(--ctp-mantle) 94%, transparent);
+    backdrop-filter: blur(40px) saturate(160%);
+    -webkit-backdrop-filter: blur(40px) saturate(160%);
+    border: 1px solid color-mix(in srgb, var(--ctp-surface1) 95%, transparent);
     box-shadow:
         0 4px 24px color-mix(in srgb, var(--ctp-crust) 50%, transparent),
-        inset 0 1px 0 color-mix(in srgb, var(--ctp-text) 8%, transparent);
-}
-
-/* Liquid effect: animated gradient layer (mauve, teal, peach) – sits behind nav content */
-.nav-glass::before {
-    content: '';
-    position: absolute;
-    inset: -100%;
-    width: 300%;
-    height: 300%;
-    left: -100%;
-    top: -100%;
-    z-index: 0;
-    background:
-        radial-gradient(
-            ellipse 70% 60% at 20% 40%,
-            color-mix(in srgb, var(--ctp-mauve) 22%, transparent) 0%,
-            transparent 50%
-        ),
-        radial-gradient(
-            ellipse 60% 70% at 80% 60%,
-            color-mix(in srgb, var(--ctp-teal) 18%, transparent) 0%,
-            transparent 50%
-        ),
-        radial-gradient(
-            ellipse 55% 55% at 50% 50%,
-            color-mix(in srgb, var(--ctp-peach) 16%, transparent) 0%,
-            transparent 45%
-        );
-    animation: nav-liquid 14s ease-in-out infinite;
-    pointer-events: none;
-}
-
-/* Keep nav text/links above the liquid layer */
-.nav-glass > * {
-    position: relative;
-    z-index: 1;
-}
-
-@keyframes nav-liquid {
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(2%, -1.5%) scale(1.04);
-    }
-    66% {
-        transform: translate(-1.5%, 2%) scale(0.96);
-    }
+        inset 0 1px 0 color-mix(in srgb, var(--ctp-text) 12%, transparent);
 }
