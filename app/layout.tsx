@@ -67,7 +67,9 @@ export default function RootLayout({
                 className={`${fraunces.variable} ${jetbrainsMono.variable} font-sans antialiased`}
             >
                 <Nav />
-                {children}
+                <div className="min-w-0 overflow-x-hidden pt-[calc(4.5rem+env(safe-area-inset-top,0px))] sm:pt-24">
+                    {children}
+                </div>
                 <ThemeToggle />
             </body>
         </html>
