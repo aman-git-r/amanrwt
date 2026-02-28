@@ -72,6 +72,7 @@
     --ctp-crust: #dddfe4;
 }
 
+/* Tailwind v4: map CSS variables to utility classes (e.g. bg-ctp-mauve, text-ctp-peach) */
 @theme inline {
     --color-ctp-rosewater: var(--ctp-rosewater);
     --color-ctp-flamingo: var(--ctp-flamingo);
