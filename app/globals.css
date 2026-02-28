@@ -1,5 +1,16 @@
 @import 'tailwindcss';
 
+/* Text selection highlight – peach (matches “Coming soon” badge), theme-aware */
+:root,
+.theme-mocha {
+    --ctp-selection-bg: var(--ctp-peach);
+    --ctp-selection-fg: var(--ctp-base);
+}
+.theme-latte {
+    --ctp-selection-bg: var(--ctp-peach);
+    --ctp-selection-fg: var(--ctp-rosewater);
+}
+
 /* Catppuccin Mocha (dark) – default */
 :root,
 .theme-mocha {
@@ -97,4 +108,9 @@ body {
     color: var(--ctp-text);
     font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
     min-height: 100vh;
+}
+
+::selection {
+    background: var(--ctp-selection-bg);
+    color: var(--ctp-selection-fg);
 }

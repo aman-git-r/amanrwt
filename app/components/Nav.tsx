@@ -28,21 +28,17 @@ export function Nav() {
                             <li key={href}>
                                 <Link
                                     href={href}
-                                    className={`inline-flex items-center gap-2 font-mono text-sm transition-colors hover:text-ctp-mauve ${
-                                        isActive
-                                            ? 'border-b-2 border-ctp-mauve text-ctp-mauve'
-                                            : 'border-b-2 border-transparent text-ctp-subtext0'
-                                    }`}
+                                    className={`inline-flex items-center gap-2 font-mono text-sm transition-colors hover:text-ctp-mauve`}
                                     aria-label={
                                         comingSoon
                                             ? `${label} – coming soon`
                                             : undefined
                                     }
                                 >
-                                    <span>{label}</span>
+                                    <span className={`${isActive ? 'border-b-2 border-ctp-mauve text-ctp-mauve' : 'border-b-2 border-transparent text-ctp-subtext0'}`}>{label}</span>
                                     {comingSoon && (
                                         <span
-                                            className="rounded border border-ctp-surface1 bg-ctp-surface0 px-2 py-0.5 font-mono text-xs text-ctp-peach"
+                                            className="rounded border border-ctp-surface1 in-[.theme-mocha]:bg-ctp-surface0 in-[.theme-latte]:bg-ctp-rosewater px-2 py-0.5 font-mono text-xs text-ctp-peach"
                                             aria-hidden
                                         >
                                             Coming soon
