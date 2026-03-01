@@ -19,19 +19,36 @@ const contacts = [
 export default function Home() {
     return (
         <div className="flex min-h-screen flex-col bg-ctp-base">
-            <main className="mx-auto flex-1 w-full max-w-2xl px-6 py-24 sm:max-w-3xl sm:py-32 md:max-w-4xl md:px-8 lg:max-w-5xl lg:px-10 xl:max-w-6xl xl:px-12">
-                <header className="space-y-6">
+            {/* Hero – full viewport container, then gradients applied inside (no cut-off) */}
+            <section
+                className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden"
+                aria-label="Introduction"
+            >
+                <div
+                    className="pointer-events-none absolute inset-0"
+                    aria-hidden
+                >
+                    <div
+                        className="absolute -left-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full opacity-[0.12] blur-[60px]"
+                        style={{ backgroundColor: "var(--ctp-mauve)" }}
+                    />
+                    <div
+                        className="absolute -right-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full opacity-[0.12] blur-[60px]"
+                        style={{ backgroundColor: "var(--ctp-peach)" }}
+                    />
+                </div>
+                <header className="relative z-10 mx-auto max-w-2xl space-y-6 px-6 text-center sm:px-8">
                     <h1 className="text-4xl font-medium tracking-tight text-ctp-text sm:text-5xl lg:text-6xl">
                         Aman Rawat
                     </h1>
                     <p className="font-mono text-sm text-ctp-mauve sm:text-base">
                         Software Engineer
                     </p>
-                    <p className="max-w-md text-lg leading-relaxed text-ctp-subtext0 sm:max-w-lg lg:max-w-xl">
+                    <p className="mx-auto max-w-md text-lg leading-relaxed text-ctp-subtext0 sm:max-w-lg lg:max-w-xl">
                         Building things with code. 3+ years of experience —
                         warm, calm corner of the web.
                     </p>
-                    <div className="flex flex-wrap gap-3 pt-2">
+                    <div className="flex flex-wrap justify-center gap-3 pt-2">
                         <Button href="#projects" variant="primary">
                             See my work
                         </Button>
@@ -40,7 +57,9 @@ export default function Home() {
                         </Button>
                     </div>
                 </header>
+            </section>
 
+            <main className="mx-auto w-full max-w-2xl px-6 pb-20 sm:max-w-3xl sm:pb-24 md:max-w-4xl md:px-8 lg:max-w-5xl lg:px-10 xl:max-w-6xl xl:px-12">
                 <section
                     id="about"
                     className="mt-20 border-t border-ctp-surface0 pt-16 sm:mt-24 sm:pt-20"

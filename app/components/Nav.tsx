@@ -93,7 +93,7 @@ export function Nav() {
                 </button>
                 {menuOpen && (
                     <div
-                        className="nav-glass absolute right-[calc(100%+6.5rem)] top-[calc(rem)] z-50 min-w-48 max-w-[calc(100vw-3rem)] w-max rounded-2xl border border-ctp-surface1 py-2 shadow-lg"
+                        className="nav-glass absolute right-[calc(100%)] top-[calc(3rem)] z-50 min-w-48 max-w-[calc(100vw-3rem)] w-max rounded-2xl border border-ctp-surface1 py-2 shadow-lg"
                         role="dialog"
                         aria-modal="true"
                         aria-label="Navigation menu"

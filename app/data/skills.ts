@@ -7,6 +7,8 @@ import {
     SiGit,
     SiDocker,
     SiKubernetes,
+    SiGo,
+    SiAmazonwebservices,
 } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa';
 
@@ -19,6 +21,8 @@ export type SkillId =
     | 'sql'
     | 'git'
     | 'docker'
+    | 'golang'
+    | 'aws'
     | 'kubernetes';
 
 export interface Skill {
@@ -37,6 +41,8 @@ export const SKILLS: Record<SkillId, Skill> = {
     git: { id: 'git', name: 'Git', Icon: SiGit },
     docker: { id: 'docker', name: 'Docker', Icon: SiDocker },
     kubernetes: { id: 'kubernetes', name: 'Kubernetes', Icon: SiKubernetes },
+    golang: { id: 'golang', name: 'Golang', Icon: SiGo },
+    aws: { id: 'aws', name: 'AWS', Icon: SiAmazonwebservices },
 } as const;
 
 export const skillsList = Object.values(SKILLS);

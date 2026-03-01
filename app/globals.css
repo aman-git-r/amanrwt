@@ -122,7 +122,7 @@ body {
     backdrop-filter: blur(40px) saturate(160%);
     -webkit-backdrop-filter: blur(40px) saturate(160%);
     border: 1px solid color-mix(in srgb, var(--ctp-surface1) 95%, transparent);
-    box-shadow:
+    /* box-shadow:
         0 4px 24px color-mix(in srgb, var(--ctp-crust) 50%, transparent),
-        inset 0 1px 0 color-mix(in srgb, var(--ctp-text) 12%, transparent);
+        inset 0 1px 0 color-mix(in srgb, var(--ctp-text) 12%, transparent); */
 }
