@@ -16,6 +16,7 @@ export interface Project {
     liveUrl?: string;
     repoUrl?: string;
     image: string;
+    readMoreUrl?: string;
 }
 
 export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
@@ -28,27 +29,44 @@ export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
 
 export const projects: Project[] = [
     {
-        id: 'portfolio',
-        title: 'Portfolio site',
+        id: "cy5.io-website",
+        title: 'cy5.io - Cloud Security Provider',
         category: 'websites',
         description:
-            'Personal portfolio built with Next.js and Tailwind. Catppuccin theme, accessible tabs, and a calm reading experience.',
-        techStack: ['nextjs', 'typescript', 'react'],
-        liveUrl: 'https://amanrwt.com',
-        repoUrl: 'https://github.com/yourusername/amanrwt',
-        image: '/projects/placeholder.svg',
+            'cy5.io is a cloud security provider that provides a comprehensive solution for cloud security. It is a cloud security provider that provides a comprehensive solution for cloud security.',
+        techStack: ['wordpress', 'html', 'css', 'javascript', 'elementor'],
+        liveUrl: 'https://cy5.io',
+        image: '/projects/cy5.png',
     },
     {
-        id: 'reddit-clone',
-        title: 'Reddit clone',
+        id: 'luxury-travel-agency',
+        title: 'luxuryliving.in - Luxury Travel Agency',
         category: 'websites',
         description:
-            'Reddit clone built with Next.js and Tailwind. Catppuccin theme, accessible tabs, and a calm reading experience.',
-        techStack: ['nextjs', 'typescript', 'react'],
-        liveUrl: 'https://amanrwt.com',
-        repoUrl: 'https://github.com/yourusername/amanrwt',
-        image: '/projects/placeholder.svg',
+            'Luxury Living is a travel agency that provides a comprehensive solution for luxury travel. It is a travel agency that provides a comprehensive solution for luxury travel.',
+        techStack: ['react', 'javascript'],
+        liveUrl: 'https://luxuryliving.in',
+        image: '/projects/luxury-living.png',
     },
+    {
+        id: 'ocean-hugs-agency',
+        title: 'oceanhugs.in',
+        category: 'websites',
+        description:
+            'Ocean Hugs is a travel agency that provides a comprehensive solution for luxury travel. It is a travel agency that provides a comprehensive solution for luxury travel.',
+        techStack: ['html', 'css', 'javascript'],
+        liveUrl: 'https://oceanhugs.in',
+        image: '/projects/ocean-hugs.png',
+    },
+    {
+        id: 'ashoka-international',
+        title: 'Ashoka International: Full-Service Moving & Relocation Website',
+        category: 'websites',
+        description: 'Ashoka International is an established full-service moving and logistics company headquartered in New Delhi, India. Operating since 1978, the company specializes in global relocations, freight forwarding, and move management for both individual and corporate clients.',
+        techStack: ['html', 'css', 'javascript'],
+        liveUrl: 'https://ashokaint.com',
+        image: '/projects/ashoka-international.png',
+    }
     // {
     //     id: 'cli-demo',
     //     title: 'CLI tool example',

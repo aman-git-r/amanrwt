@@ -13,11 +13,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
     return (
         <article className="flex flex-col">
             {/* Artifact-style image frame */}
-            <div className="overflow-hidden rounded-none border border-ctp-surface1 bg-ctp-surface0">
-                <div className="flex h-2 items-center gap-1.5 border-b border-ctp-surface1 bg-ctp-surface1 px-2">
-                    <span className="size-1.5 rounded-full bg-ctp-overlay0" aria-hidden />
-                    <span className="size-1.5 rounded-full bg-ctp-overlay0" aria-hidden />
-                    <span className="size-1.5 rounded-full bg-ctp-overlay0" aria-hidden />
+            <div className="overflow-hidden rounded-md border border-ctp-surface1 bg-ctp-surface0">
+                <div className="flex h-4 items-center gap-1.5 border-b border-ctp-surface1 bg-ctp-surface1 px-2">
+                    <span className="size-1.5 rounded-full bg-ctp-red" aria-hidden />
+                    <span className="size-1.5 rounded-full bg-ctp-yellow" aria-hidden />
+                    <span className="size-1.5 rounded-full bg-ctp-green" aria-hidden />
                 </div>
                 <div className="relative aspect-video w-full bg-ctp-surface0">
                     <Image
