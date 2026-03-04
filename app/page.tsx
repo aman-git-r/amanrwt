@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/app/components/Button";
-import { ProjectTabs } from "@/app/components/ProjectTabs";
+import { ProjectCard } from "@/app/components/ProjectCard";
 import { skillsList } from "@/app/data/skills";
+import { projects } from "@/app/data/projects";
 import {
     SiGithub,
     SiLinkedin,
@@ -49,7 +50,7 @@ export default function Home() {
                         warm, calm corner of the web.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-2">
-                        <Button href="#projects" variant="primary">
+                        <Button href="/projects" variant="primary">
                             See my work
                         </Button>
                         <Button href="/contact" variant="secondary">
@@ -103,8 +104,33 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-
-                <ProjectTabs />
+                {/* Featured projects preview */}
+                <section
+                    className="mt-20 border-t border-ctp-surface0 pt-16 sm:mt-24 sm:pt-20"
+                    aria-labelledby="featured-projects-heading"
+                >
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                            <h2
+                                id="featured-projects-heading"
+                                className="font-mono text-sm font-medium uppercase tracking-wider text-ctp-mauve"
+                            >
+                                Featured projects
+                            </h2>
+                            <p className="mt-2 max-w-xl text-sm text-ctp-subtext0">
+                                A few things I&apos;ve worked on recently. See more on the projects page.
+                            </p>
+                        </div>
+                        <Button href="/projects" variant="secondary" className="self-start sm:self-auto">
+                            View all projects →
+                        </Button>
+                    </div>
+                    <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                        {projects.slice(0, 2).map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </div>
+                </section>
             </main>
 
             <footer
@@ -142,7 +168,7 @@ export default function Home() {
                                 <ul className="flex flex-wrap gap-x-6 gap-y-2">
                                     <li>
                                         <Link
-                                            href="#projects"
+                                            href="/projects"
                                             className="font-mono text-sm text-ctp-subtext0 transition-colors hover:text-ctp-mauve"
                                         >
                                             Projects
