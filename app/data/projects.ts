@@ -7,6 +7,12 @@ export type ProjectCategory =
     | 'cli-tools'
     | 'others';
 
+export interface LongDescription {
+    problem: string;
+    approach: string;
+    outcome: string;
+}
+
 export interface Project {
     id: string;
     title: string;
@@ -17,6 +23,10 @@ export interface Project {
     repoUrl?: string;
     image: string;
     readMoreUrl?: string;
+    /** Case study: problem, approach, outcome. Optional; detail page hides if missing. */
+    longDescription?: LongDescription;
+    /** Extra screenshots for the detail page gallery. Optional. */
+    gallery?: string[];
 }
 
 export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
@@ -37,6 +47,15 @@ export const projects: Project[] = [
         techStack: ['wordpress', 'html', 'css', 'javascript', 'elementor'],
         liveUrl: 'https://cy5.io',
         image: '/projects/cy5.png',
+        longDescription: {
+            problem:
+                'The client needed a clear, trustworthy web presence to communicate their cloud security offerings and capture enterprise leads without looking generic or dated.',
+            approach:
+                'We used WordPress with Elementor for flexible layout control, custom styling with the Catppuccin-inspired palette for a modern feel, and structured content sections for services, differentiators, and contact.',
+            outcome:
+                'A fast-loading, accessible marketing site that reflects the brand and converts visitors into leads. The site is easy for the client to update without developer involvement.',
+        },
+        gallery: ['/projects/cy5.png', '/projects/cy5.png'],
     },
     {
         id: 'luxury-travel-agency',
