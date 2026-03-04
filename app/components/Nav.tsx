@@ -2,168 +2,113 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
-import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
+import { useEffect, useState } from 'react';
+import { SiGithub, SiX } from 'react-icons/si';
+import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 
 const navItems = [
-    { href: '/', label: 'Home', comingSoon: false },
-    { href: '/projects', label: 'Projects', comingSoon: false },
-    { href: '/story', label: 'Story', comingSoon: true },
-    { href: '/blog', label: 'Blog', comingSoon: true },
+    { href: '/', label: 'Home' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/blog', label: 'Blog' },
 ] as const;
+
+type Theme = 'mocha' | 'latte';
 
 export function Nav() {
     const pathname = usePathname();
-    const [menuOpen, setMenuOpen] = useState(false);
-    const menuRef = useRef<HTMLDivElement>(null);
-    const firstLinkRef = useRef<HTMLAnchorElement>(null);
+    const [theme, setTheme] = useState<Theme>('mocha');
+    const [mounted, setMounted] = useState(false);
 
-    const closeMenu = () => setMenuOpen(false);
-
-    /* Click outside: close when clicking outside menuRef (e.g. backdrop) */
     useEffect(() => {
-        if (!menuOpen) return;
-        const handleClickOutside = (e: MouseEvent) => {
-            if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-                closeMenu();
-            }
-        };
-        document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
-    }, [menuOpen]);
+        setMounted(true);
+        const stored = (localStorage.getItem('theme') as Theme) || 'mocha';
+        setTheme(stored);
+    }, []);
 
-    /* Escape key: close menu */
-    useEffect(() => {
-        if (!menuOpen) return;
-        const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') closeMenu();
-        };
-        document.addEventListener('keydown', handleEscape);
-        return () => document.removeEventListener('keydown', handleEscape);
-    }, [menuOpen]);
+    const toggleTheme = () => {
+        const next: Theme = theme === 'mocha' ? 'latte' : 'mocha';
+        setTheme(next);
+        localStorage.setItem('theme', next);
+        document.documentElement.className = `theme-${next}`;
+    };
 
-    /* When menu opens: lock body scroll (avoid scrollbar shift), focus first link for keyboard */
-    useEffect(() => {
-        if (!menuOpen) return;
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-        const prevOverflow = document.body.style.overflow;
-        const prevPaddingRight = document.body.style.paddingRight;
-        document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = `${scrollbarWidth}px`;
-        firstLinkRef.current?.focus({ preventScroll: true });
-        return () => {
-            document.body.style.overflow = prevOverflow;
-            document.body.style.paddingRight = prevPaddingRight;
-        };
-    }, [menuOpen]);
-
-    const linkContent = (label: string, comingSoon: boolean) => (
-        <>
-            <span>{label}</span>
-            {comingSoon && (
-                <span
-                    className="rounded-md border border-ctp-surface1 bg-ctp-surface0 px-2 py-0.5 font-mono text-xs text-ctp-peach"
-                    aria-hidden
-                >
-                    Coming soon
-                </span>
-            )}
-        </>
-    );
+    const isActive = (href: string) => {
+        if (href === '/') return pathname === '/';
+        return pathname.startsWith(href);
+    };
 
     return (
-        <>
-            {/* Mobile: hamburger top-right (same style as ThemeToggle), fixed width to prevent shift */}
-            <div
-                className="fixed right-6 top-[max(0.75rem,env(safe-area-inset-top))] z-50 w-11 overflow-visible sm:hidden"
-                ref={menuRef}
-            >
-                <button
-                    type="button"
-                    onClick={() => setMenuOpen((o) => !o)}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ctp-surface1 bg-ctp-base text-ctp-text shadow-[0_4px_0_0_var(--ctp-crust)] transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:shadow-[0_6px_0_0_var(--ctp-crust)] hover:text-ctp-mauve focus:outline-none focus-visible:ring-2 focus-visible:ring-ctp-mauve focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base active:translate-y-0.5 active:shadow-[0_1px_0_0_var(--ctp-crust)]"
-                    aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                    aria-expanded={menuOpen}
-                    aria-haspopup="true"
+        <header className="sticky top-0 z-40 border-b border-ctp-surface1 bg-ctp-crust/95 backdrop-blur-md">
+            <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+                {/* Left: brand */}
+                <Link
+                    href="/"
+                    className="inline-flex items-center gap-2 text-2xl font-semibold tracking-wide text-ctp-text"
                 >
-                    {menuOpen ? (
-                        <HiOutlineX className="h-5 w-5" aria-hidden />
-                    ) : (
-                        <HiOutlineMenu className="h-5 w-5" aria-hidden />
-                    )}
-                </button>
-                {menuOpen && (
-                    <div
-                        className="nav-glass absolute right-[calc(100%)] top-[calc(3rem)] z-50 min-w-48 max-w-[calc(100vw-3rem)] w-max rounded-2xl border border-ctp-surface1 py-2 shadow-lg"
-                        role="dialog"
-                        aria-modal="true"
-                        aria-label="Navigation menu"
-                    >
-                        <ul className="font-mono text-sm" role="menu">
-                            {navItems.map((item, i) => {
-                                const isActive =
-                                    item.href === '/'
-                                        ? pathname === '/'
-                                        : pathname.startsWith(item.href);
-                                return (
-                                    <li key={item.href} role="none">
-                                        <Link
-                                            ref={i === 0 ? firstLinkRef : undefined}
-                                            href={item.href}
-                                            role="menuitem"
-                                            onClick={closeMenu}
-                                            className={`flex min-h-[44px] min-w-[44px] items-center gap-2 px-4 py-2.5 transition-colors hover:text-ctp-mauve focus:outline-none focus-visible:ring-2 focus-visible:ring-ctp-mauve focus-visible:ring-inset ${
-                                                isActive
-                                                    ? 'bg-ctp-surface0 text-ctp-mauve'
-                                                    : 'text-ctp-subtext0'
-                                            }`}
-                                            aria-label={
-                                                item.comingSoon
-                                                    ? `${item.label} – coming soon`
-                                                    : undefined
-                                            }
-                                        >
-                                            {linkContent(item.label, item.comingSoon)}
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                )}
-            </div>
+                    <span className="text-ctp-peach">//</span>
+                    <span className="text-ctp-text">AR</span>
+                </Link>
 
-            {/* Desktop: centered floating pill with liquid glass */}
-            <nav
-                aria-label="Main"
-                className="fixed left-1/2 top-[max(0.75rem,env(safe-area-inset-top))] z-40 hidden w-max -translate-x-1/2 sm:block"
-            >
-                <div className="nav-glass flex items-center gap-1 rounded-full px-2 py-2 font-mono text-sm">
-                    <ul className="flex items-center justify-center gap-1">
-                        {navItems.map(({ href, label, comingSoon }) => {
-                            const isActive =
-                                href === '/' ? pathname === '/' : pathname.startsWith(href);
-                            return (
+                <div className="flex flex-none items-center gap-6">
+                    {/* Navigation */}
+                    <nav aria-label="Main navigation">
+                        <ul className="flex items-center justify-end gap-3 sm:gap-5">
+                            {navItems.map(({ href, label }) => (
                                 <li key={href}>
                                     <Link
                                         href={href}
-                                        className={`inline-flex items-center gap-2 rounded-full px-4 py-2 transition-colors hover:text-ctp-mauve focus:outline-none focus-visible:ring-2 focus-visible:ring-ctp-mauve focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-mantle ${
-                                            isActive
-                                                ? 'bg-ctp-surface0 text-ctp-mauve'
-                                                : 'text-ctp-subtext0'
+                                        className={`inline-flex items-center gap-2 px-1.5 py-1 text-sm transition-colors ${
+                                            isActive(href)
+                                                ? 'text-ctp-peach'
+                                                : 'text-ctp-text hover:text-ctp-peach'
                                         }`}
-                                        aria-label={
-                                            comingSoon ? `${label} – coming soon` : undefined
-                                        }
                                     >
-                                        {linkContent(label, comingSoon)}
+                                        <span>{label}</span>
                                     </Link>
                                 </li>
-                            );
-                        })}
-                    </ul>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    {/* Right icons: Twitter, GitHub, theme toggle */}
+                    <div className="flex items-center gap-3">
+                        <a
+                            href="https://x.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)"
+                            className="inline-flex h-6 w-6 items-center justify-center text-ctp-text/80 transition-colors hover:text-ctp-peach"
+                        >
+                            <SiX className="h-4 w-4" aria-hidden />
+                        </a>
+                        <a
+                            href="https://github.com/aman-git-r"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            className="inline-flex h-6 w-6 items-center justify-center text-ctp-text/80 transition-colors hover:text-ctp-peach"
+                        >
+                            <SiGithub className="h-4 w-4" aria-hidden />
+                        </a>
+                        <button
+                            type="button"
+                            onClick={toggleTheme}
+                            className="inline-flex h-6 w-6 items-center justify-center text-ctp-text/80 transition-colors hover:text-ctp-peach focus:outline-none"
+                            aria-label={
+                                mounted && theme === 'latte'
+                                    ? 'Switch to dark mode'
+                                    : 'Switch to light mode'
+                            }
+                        >
+                            {mounted && theme === 'latte' ? (
+                                <HiOutlineMoon className="h-5 w-5" aria-hidden />
+                            ) : (
+                                <HiOutlineSun className="h-5 w-5" aria-hidden />
+                            )}
+                        </button>
+                    </div>
                 </div>
-            </nav>
-        </>
+            </div>
+        </header>
     );
 }
