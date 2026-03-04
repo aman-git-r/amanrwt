@@ -7,6 +7,7 @@ import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 
 const navItems = [
     { href: '/', label: 'Home', comingSoon: false },
+    { href: '/projects', label: 'Projects', comingSoon: false },
     { href: '/story', label: 'Story', comingSoon: true },
     { href: '/blog', label: 'Blog', comingSoon: true },
 ] as const;
