@@ -13,7 +13,12 @@ function filterByCategory(projectsList: Project[], category: ProjectCategory): P
     return projectsList.filter((p) => p.category === category);
 }
 
-export function ProjectTabs() {
+interface ProjectTabsProps {
+    /** When true, used as main content on /projects page: no section heading, reduced top spacing */
+    standalone?: boolean;
+}
+
+export function ProjectTabs({ standalone = false }: ProjectTabsProps) {
     const [activeCategory, setActiveCategory] = useState<ProjectCategory>('websites');
     const [focusedIndex, setFocusedIndex] = useState(0);
     const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -59,15 +64,21 @@ export function ProjectTabs() {
     return (
         <section
             id="projects"
-            className="mt-20 border-t border-ctp-surface0 pt-16 sm:mt-24 sm:pt-20"
-            aria-labelledby="projects-heading"
+            className={
+                standalone
+                    ? 'pt-0'
+                    : 'mt-20 border-t border-ctp-surface0 pt-16 sm:mt-24 sm:pt-20'
+            }
+            aria-labelledby={standalone ? undefined : 'projects-heading'}
         >
-            <h2
-                id="projects-heading"
-                className="font-mono text-sm font-medium uppercase tracking-wider text-ctp-mauve"
-            >
-                Projects
-            </h2>
+            {!standalone && (
+                <h2
+                    id="projects-heading"
+                    className="font-mono text-sm font-medium uppercase tracking-wider text-ctp-mauve"
+                >
+                    Projects
+                </h2>
+            )}
 
             <div
                 role="tablist"
