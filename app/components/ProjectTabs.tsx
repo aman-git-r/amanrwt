@@ -102,7 +102,7 @@ export function ProjectTabs({ standalone = false }: ProjectTabsProps) {
                             setActiveCategory(value);
                             setFocusedIndex(index);
                         }}
-                        className={`border-b-2 py-3 mr-4 font-mono text-sm font-medium transition-colors ${
+                        className={`border-b-[2.5px] py-3 mr-4 text-sm font-medium transition-colors ${
                             activeCategory === value
                                 ? 'border-ctp-mauve text-ctp-mauve'
                                 : 'border-transparent text-ctp-subtext0 hover:text-ctp-text'
@@ -123,7 +123,7 @@ export function ProjectTabs({ standalone = false }: ProjectTabsProps) {
                     className="mt-8"
                 >
                     {activeCategory === value && (
-                        <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2" aria-label="Projects">
+                        <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" aria-label="Projects">
                             {filteredProjects.length > 0 ? (
                                 filteredProjects.map((project) => (
                                     <li key={project.id}>
