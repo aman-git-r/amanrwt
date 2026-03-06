@@ -101,7 +101,7 @@
     --color-ctp-mantle: var(--ctp-mantle);
     --color-ctp-crust: var(--ctp-crust);
     --font-sans: var(--font-display);
-    --font-mono: var(--font-mono-jetbrains);
+    --font-mono: ui-monospace, monospace;
 }
 
 body {
@@ -114,6 +114,10 @@ body {
 ::selection {
     background: var(--ctp-selection-bg);
     color: var(--ctp-selection-fg);
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Nav: blur + vibrancy (opaque frosted glass so content behind is not visible) */

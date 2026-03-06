@@ -1,13 +1,8 @@
 import type { Metadata, Viewport } from 'next';
-import { JetBrains_Mono, Outfit } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import { Nav } from '@/app/components/Nav';
 import { ThemeToggle } from '@/app/components/ThemeToggle';
 import './globals.css';
-
-const jetbrainsMono = JetBrains_Mono({
-    variable: '--font-mono-jetbrains',
-    subsets: ['latin'],
-});
 
 const outfit = Outfit({
     variable: '--font-display',
@@ -64,7 +59,7 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`${outfit.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+                className={`${outfit.variable} font-sans antialiased`}
             >
                 <Nav />
                 <div className="min-w-0 overflow-x-hidden">

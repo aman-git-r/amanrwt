@@ -83,7 +83,7 @@ export function ProjectTabs({ standalone = false }: ProjectTabsProps) {
             <div
                 role="tablist"
                 aria-label="Project categories"
-                className="mt-6 flex flex-wrap gap-1 border-b border-ctp-surface0"
+                className="mt-6 flex flex-wrap gap-1"
                 onKeyDown={handleKeyDown}
             >
                 {PROJECT_CATEGORIES.map(({ value, label }, index) => (
@@ -102,7 +102,7 @@ export function ProjectTabs({ standalone = false }: ProjectTabsProps) {
                             setActiveCategory(value);
                             setFocusedIndex(index);
                         }}
-                        className={`border-b-2 px-4 py-3 font-mono text-sm font-medium transition-colors ${
+                        className={`border-b-2 py-3 mr-4 font-mono text-sm font-medium transition-colors ${
                             activeCategory === value
                                 ? 'border-ctp-mauve text-ctp-mauve'
                                 : 'border-transparent text-ctp-subtext0 hover:text-ctp-text'
