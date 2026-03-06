@@ -86,7 +86,7 @@ export default async function ProjectDetailPage({
     }
 
     return (
-        <div className="min-h-screen bg-ctp-base">
+        <div className="min-h-screen bg-ctp-crust in-[.theme-latte]:bg-ctp-base">
             <main className="mx-auto w-full max-w-3xl px-6 py-24 pb-20 sm:py-32 sm:pb-24 md:px-8">
                 <Link
                     href="/projects"
