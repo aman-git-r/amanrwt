@@ -5,6 +5,7 @@ export type ProjectCategory =
     | 'web-apps'
     | 'featured-project'
     | 'cli-tools'
+    | 'ai-projects'
     | 'others';
 
 export interface LongDescription {
@@ -34,6 +35,7 @@ export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
     { value: 'web-apps', label: 'Web apps' },
     { value: 'featured-project', label: 'Featured' },
     { value: 'cli-tools', label: 'CLI tools' },
+    { value: 'ai-projects', label: 'AI projects' },
     { value: 'others', label: 'Others' },
 ];
 
@@ -85,15 +87,14 @@ export const projects: Project[] = [
         techStack: ['html', 'css', 'javascript'],
         liveUrl: 'https://ashokaint.com',
         image: '/projects/ashoka-international.png',
-    }
-    // {
-    //     id: 'cli-demo',
-    //     title: 'CLI tool example',
-    //     category: 'cli-tools',
-    //     description:
-    //         'A small command-line utility for local development. Demonstrates parsing, config loading, and clear help output.',
-    //     techStack: ['Node.js', 'TypeScript', 'Commander'],
-    //     repoUrl: 'https://github.com/yourusername/example-cli',
-    //     image: '/projects/placeholder.svg',
-    // },
+    },
+    {
+        id: 'vibe-chords',
+        title: 'Vibe Chords: AI-Powered Music Chord Generator',
+        category: 'ai-projects',
+        description: 'Vibe Chords is an AI-powered music chord generator that generates chords based on the given music vibe.',
+        techStack: ['nextjs',  'typescript', 'geminiApi', 'tailwindcss', 'netlify'],
+        liveUrl: 'https://vibe-chords.amanrwt.app',
+        image: '/projects/vibe-chords.png',
+    },
 ];

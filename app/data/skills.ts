@@ -14,6 +14,9 @@ import {
     SiCss3,
     SiWordpress,
     SiElementor,
+    SiGoogle,
+    SiTailwindcss,
+    SiNetlify,
 } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa';
 
@@ -29,11 +32,14 @@ export type SkillId =
     | 'sql'
     | 'html'
     | 'css'
+    | 'netlify'
     | 'git'
     | 'docker'
     | 'golang'
     | 'aws'
-    | 'kubernetes';
+    | 'kubernetes'
+    | 'tailwindcss'
+    | 'geminiApi';
 
 export interface Skill {
     id: SkillId;
@@ -64,7 +70,10 @@ export const SKILLS: Record<SkillId, Skill> = {
     kubernetes: { id: 'kubernetes', name: 'Kubernetes', Icon: SiKubernetes, color: '#326CE5', url: 'https://kubernetes.io' },
     golang: { id: 'golang', name: 'Golang', Icon: SiGo, color: '#00ADD8', url: 'https://go.dev' },
     aws: { id: 'aws', name: 'AWS', Icon: SiAmazonwebservices, color: '#232F3E', colorDark: '#cdd6f4', url: 'https://aws.amazon.com' },
-} as const;
+    geminiApi: { id: 'geminiApi', name: 'Gemini API', Icon: SiGoogle, color: '#4285F4', url: 'https://gemini.google.com' },
+    tailwindcss: { id: 'tailwindcss', name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4', url: 'https://tailwindcss.com' },
+    netlify: { id: 'netlify', name: 'Netlify', Icon: SiNetlify, color: '#00C7B7', url: 'https://netlify.com' },
+    } as const;
 
 export const skillsList = Object.values(SKILLS);
 
