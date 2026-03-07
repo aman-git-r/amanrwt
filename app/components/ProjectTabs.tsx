@@ -123,15 +123,21 @@ export function ProjectTabs({ standalone = false }: ProjectTabsProps) {
                     className="mt-8"
                 >
                     {activeCategory === value && (
-                        <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" aria-label="Projects">
+                        <ul
+                            className="flex flex-wrap justify-center gap-8"
+                            aria-label="Projects"
+                        >
                             {filteredProjects.length > 0 ? (
                                 filteredProjects.map((project) => (
-                                    <li key={project.id}>
+                                    <li
+                                        key={project.id}
+                                        className="flex-[0_0_100%] sm:flex-[0_0_calc((100%-2rem)/2)] lg:flex-[0_0_calc((100%-4rem)/3)]"
+                                    >
                                         <ProjectCard project={project} />
                                     </li>
                                 ))
                             ) : (
-                                <li className="col-span-full text-center font-mono text-sm text-ctp-subtext0">
+                                <li className="w-full text-center font-mono text-sm text-ctp-subtext0">
                                     No projects in this category yet.
                                 </li>
                             )}
