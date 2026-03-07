@@ -11,7 +11,7 @@ export function SkillBadge({ skill }: SkillBadgeProps) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="skill-badge-link inline-flex items-center gap-2 text-sm text-ctp-text transition-transform duration-200 hover:scale-105 in-[.theme-latte]:rounded-full in-[.theme-latte]:bg-white in-[.theme-latte]:px-2 in-[.theme-latte]:py-1"
+            className="skill-badge-link inline-flex items-center gap-2 text-sm text-ctp-text transition-transform duration-200 hover:scale-105 in-[.theme-latte]:rounded-full in-[.theme-latte]:bg-(--ctp-latte-base) in-[.theme-latte]:px-2 in-[.theme-latte]:py-1"
             title={name}
             style={
                 {

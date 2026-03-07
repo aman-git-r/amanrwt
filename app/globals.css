@@ -42,7 +42,7 @@
     --ctp-crust: #11111b;
 }
 
-/* Catppuccin Latte (light) */
+/* Catppuccin Latte (light) – page bg white, badge uses original base (inverted) */
 .theme-latte {
     --ctp-rosewater: #dce0e8;
     --ctp-flamingo: #ddb4b4;
@@ -67,7 +67,8 @@
     --ctp-surface2: #acb0be;
     --ctp-surface1: #bcc0cc;
     --ctp-surface0: #ccd0da;
-    --ctp-base: #eff1f5;
+    --ctp-latte-base: #eff1f5; /* original base, used for badge bg so badge = page color */
+    --ctp-base: #ffffff; /* page background in light theme */
     --ctp-mantle: #e6e9ef;
     --ctp-crust: #dddfe4;
 }
