@@ -16,26 +16,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <article className="flex flex-col">
             <Link
                 href={`/projects/${project.id}`}
-                className="group block transition-transform duration-200 hover:-translate-y-0.5"
+                className="group block"
             >
                 {/* Artifact-style image frame */}
-                <div className="overflow-hidden rounded-md border border-ctp-surface1 bg-ctp-surface0 transition-colors duration-200 group-hover:border-ctp-mauve">
-                    <div className="flex h-4 items-center gap-1.5 border-b border-ctp-surface1 bg-ctp-surface1 px-2">
-                        <span className="size-1.5 rounded-full bg-ctp-red" aria-hidden />
-                        <span className="size-1.5 rounded-full bg-ctp-yellow" aria-hidden />
-                        <span className="size-1.5 rounded-full bg-ctp-green" aria-hidden />
-                    </div>
+                <div className="overflow-hidden rounded-2xl border-2 border-ctp-surface1 bg-ctp-surface0 transition-colors duration-200 group-hover:border-ctp-peach">
                     <div className="relative aspect-video w-full bg-ctp-surface0">
                         <Image
                             src={image}
                             alt=""
                             fill
-                            className="object-cover"
+                            className="object-cover transition duration-200"
                             sizes="(max-width: 640px) 100vw, 50vw"
+                        />
+                        <span
+                            className="pointer-events-none absolute inset-0 bg-ctp-peach/25 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                            aria-hidden
                         />
                     </div>
                 </div>
-                <h3 className="mt-4 text-xl font-medium text-ctp-text group-hover:text-ctp-mauve transition-colors duration-200">
+                <h3 className="mt-4 text-xl font-medium text-ctp-text transition-colors duration-200 group-hover:text-ctp-peach">
                     {title}
                 </h3>
             </Link>
