@@ -40,10 +40,10 @@ export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
 export const projects: Project[] = [
     {
         id: "cy5.io-website",
-        title: 'cy5.io - Cloud Security Provider',
+        title: 'Cy5 Cloud Security Provider Website',
         category: 'websites',
         description:
-            'cy5.io is a cloud security provider that provides a comprehensive solution for cloud security. It is a cloud security provider that provides a comprehensive solution for cloud security.',
+            'Cy5.io is a cloud security provider that provides a comprehensive solution for cloud-native application security.',
         techStack: ['wordpress', 'html', 'css', 'javascript', 'elementor'],
         liveUrl: 'https://cy5.io',
         image: '/projects/cy5.png',
@@ -59,20 +59,20 @@ export const projects: Project[] = [
     },
     {
         id: 'luxury-travel-agency',
-        title: 'luxuryliving.in - Luxury Travel Agency',
+        title: 'Luxury Living Travel Agency Website',
         category: 'websites',
         description:
-            'Luxury Living is a travel agency that provides a comprehensive solution for luxury travel. It is a travel agency that provides a comprehensive solution for luxury travel.',
+            'Luxury Living is a B2B travel company that only works with high-end / luxury hotels & resorts. They take pride in being the only one of our kind in the Indian Subcontinent. They are completely offline & they like to keep it that way.',
         techStack: ['react', 'javascript'],
         liveUrl: 'https://luxuryliving.in',
         image: '/projects/luxury-living.png',
     },
     {
         id: 'ocean-hugs-agency',
-        title: 'oceanhugs.in',
+        title: 'Ocean Hugs Travel Agency Website',
         category: 'websites',
         description:
-            'Ocean Hugs is a travel agency that provides a comprehensive solution for luxury travel. It is a travel agency that provides a comprehensive solution for luxury travel.',
+            'Ocean Hugs is a Delhi-based travel agency specializing in personalized honeymoon and tour packages. The site showcases their bespoke itinerary services, highlights key offerings, and serves as a digital gateway for travelers exploring Greater Kailash and beyond.',
         techStack: ['html', 'css', 'javascript'],
         liveUrl: 'https://oceanhugs.in',
         image: '/projects/ocean-hugs.png',
