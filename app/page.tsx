@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/app/components/Button";
 import { ProjectCard } from "@/app/components/ProjectCard";
+import { SkillBadge } from "@/app/components/SkillBadge";
 import { skillsList } from "@/app/data/skills";
 import { projects } from "@/app/data/projects";
 import {
@@ -87,17 +88,10 @@ export default function Home() {
                             <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-ctp-subtext1">
                                 Skills & tools
                             </h3>
-                            <ul className="mt-3 flex w-4/5 flex-wrap gap-2">
-                                {skillsList.map(({ id, name, Icon }) => (
-                                    <li
-                                        key={id}
-                                        className="group flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:text-ctp-mauve in-[.theme-mocha]:hover:bg-ctp-surface0"
-                                    >
-                                        <Icon
-                                            className="size-4 shrink-0 text-ctp-subtext1 transition-colors duration-200 group-hover:text-ctp-mauve"
-                                            aria-hidden
-                                        />
-                                        <span>{name}</span>
+                            <ul className="mt-3 flex w-4/5 flex-wrap gap-x-4 gap-y-2">
+                                {skillsList.map((skill) => (
+                                    <li key={skill.id}>
+                                        <SkillBadge skill={skill} />
                                     </li>
                                 ))}
                             </ul>

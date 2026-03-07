@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Project } from '@/app/data/projects';
 import { SKILLS } from '@/app/data/skills';
 import { Button } from '@/app/components/Button';
+import { SkillBadge } from '@/app/components/SkillBadge';
 
 interface ProjectCardProps {
     project: Project;
@@ -40,22 +41,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </Link>
             <p className="mt-2 text-base leading-relaxed text-ctp-subtext0">{description}</p>
 
-            <ul className="mt-3 flex flex-wrap gap-2" aria-label="Tech stack">
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2" aria-label="Tech stack">
                 {techStack.map((skillId) => {
                     const skill = SKILLS[skillId];
                     if (!skill) return null;
-                    const { id, name, Icon } = skill;
-
                     return (
-                        <li
-                            key={id}
-                            className="group flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text transition-all duration-200 hover:-translate-y-0.5 hover:border-ctp-mauve hover:text-ctp-mauve in-[.theme-mocha]:hover:bg-ctp-surface0"
-                        >
-                            <Icon
-                                className="size-4 shrink-0 text-ctp-subtext1 transition-colors duration-200 group-hover:text-ctp-mauve"
-                                aria-hidden
-                            />
-                            <span>{name}</span>
+                        <li key={skill.id}>
+                            <SkillBadge skill={skill} />
                         </li>
                     );
                 })}

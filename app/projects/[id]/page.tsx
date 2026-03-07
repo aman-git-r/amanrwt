@@ -9,6 +9,7 @@ import {
 } from '@/app/data/projects';
 import { SKILLS } from '@/app/data/skills';
 import { Button } from '@/app/components/Button';
+import { SkillBadge } from '@/app/components/SkillBadge';
 
 export function generateStaticParams() {
     return projects.map((p) => ({ id: p.id }));
@@ -120,18 +121,13 @@ export default async function ProjectDetailPage({
                     {description}
                 </p>
 
-                <ul className="mt-6 flex flex-wrap gap-2" aria-label="Tech stack">
+                <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2" aria-label="Tech stack">
                     {techStack.map((skillId) => {
                         const skill = SKILLS[skillId];
                         if (!skill) return null;
-                        const { id: skillIdKey, name, Icon } = skill;
                         return (
-                            <li
-                                key={skillIdKey}
-                                className="flex items-center gap-2 rounded-none border border-ctp-surface1 bg-ctp-mantle px-3 py-1.5 font-mono text-sm text-ctp-text"
-                            >
-                                <Icon className="size-4 shrink-0 text-ctp-subtext1" aria-hidden />
-                                <span>{name}</span>
+                            <li key={skill.id}>
+                                <SkillBadge skill={skill} />
                             </li>
                         );
                     })}
