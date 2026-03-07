@@ -39,18 +39,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     {title}
                 </h3>
             </Link>
-            <p className="mt-2 text-base leading-relaxed text-ctp-subtext0">{description}</p>
+            <p className="mt-2 text-base leading-relaxed text-ctp-subtext0 line-clamp-3">{description}</p>
 
-            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2" aria-label="Tech stack">
-                {techStack.map((skillId) => {
+            <ul className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2" aria-label="Tech stack">
+                {techStack.slice(0, 3).map((skillId) => {
                     const skill = SKILLS[skillId];
                     if (!skill) return null;
                     return (
-                        <li key={skill.id}>
+                        <li key={skill.id} className="flex items-center">
                             <SkillBadge skill={skill} />
                         </li>
                     );
                 })}
+                {techStack.length > 3 && (
+                    <li className="flex items-center">
+                        <span className="inline-flex items-center justify-center rounded-full border border-ctp-surface1 bg-ctp-surface0 px-2.5 py-1 text-xs font-medium text-ctp-subtext0 leading-none">
+                            +{techStack.length - 3}
+                        </span>
+                    </li>
+                )}
             </ul>
 
             <div className="mt-4 flex flex-wrap gap-3">
