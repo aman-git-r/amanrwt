@@ -120,6 +120,11 @@ button {
     cursor: pointer;
 }
 
+/* Skill badges: default from --icon-color on link; dark theme overrides to colorDark when set */
+.theme-mocha .skill-badge-link .skill-badge-icon {
+    color: var(--icon-color-dark, var(--icon-color)) !important;
+}
+
 /* Nav: blur + vibrancy (opaque frosted glass so content behind is not visible) */
 .nav-glass {
     background: color-mix(in srgb, var(--ctp-mantle) 94%, transparent);

@@ -41,6 +41,8 @@ export interface Skill {
     Icon: React.ComponentType<React.SVGProps<SVGSVGElement> | { className?: string }>;
     /** Brand color (hex) for the icon */
     color: string;
+    /** Optional: use on dark background when brand color is too dark (e.g. Next.js, AWS) */
+    colorDark?: string;
     /** Official or docs URL for the technology */
     url: string;
 }
@@ -50,7 +52,7 @@ export const SKILLS: Record<SkillId, Skill> = {
     wordpress: { id: 'wordpress', name: 'WordPress', Icon: SiWordpress, color: '#21759B', url: 'https://wordpress.org' },
     elementor: { id: 'elementor', name: 'Elementor', Icon: SiElementor, color: '#92003B', url: 'https://elementor.com' },
     react: { id: 'react', name: 'React', Icon: SiReact, color: '#61DAFB', url: 'https://react.dev' },
-    nextjs: { id: 'nextjs', name: 'Next.js', Icon: SiNextdotjs, color: '#000000', url: 'https://nextjs.org' },
+    nextjs: { id: 'nextjs', name: 'Next.js', Icon: SiNextdotjs, color: '#000000', colorDark: '#cdd6f4', url: 'https://nextjs.org' },
     nodejs: { id: 'nodejs', name: 'Node.js', Icon: SiNodedotjs, color: '#339933', url: 'https://nodejs.org' },
     python: { id: 'python', name: 'Python', Icon: SiPython, color: '#3776AB', url: 'https://www.python.org' },
     sql: { id: 'sql', name: 'SQL', Icon: FaDatabase, color: '#336791', url: 'https://en.wikipedia.org/wiki/SQL' },
@@ -61,7 +63,7 @@ export const SKILLS: Record<SkillId, Skill> = {
     docker: { id: 'docker', name: 'Docker', Icon: SiDocker, color: '#2496ED', url: 'https://www.docker.com' },
     kubernetes: { id: 'kubernetes', name: 'Kubernetes', Icon: SiKubernetes, color: '#326CE5', url: 'https://kubernetes.io' },
     golang: { id: 'golang', name: 'Golang', Icon: SiGo, color: '#00ADD8', url: 'https://go.dev' },
-    aws: { id: 'aws', name: 'AWS', Icon: SiAmazonwebservices, color: '#232F3E', url: 'https://aws.amazon.com' },
+    aws: { id: 'aws', name: 'AWS', Icon: SiAmazonwebservices, color: '#232F3E', colorDark: '#cdd6f4', url: 'https://aws.amazon.com' },
 } as const;
 
 export const skillsList = Object.values(SKILLS);
