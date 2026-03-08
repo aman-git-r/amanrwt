@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Project } from '@/app/data/projects';
@@ -10,7 +12,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-    const { title, description, techStack, liveUrl, repoUrl, image } = project;
+    const { title, description, techStack, liveUrl, repoUrl, image, client } = project;
 
     return (
         <article className="flex flex-col">
@@ -28,6 +30,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
                             className="object-cover transition duration-200"
                             sizes="(max-width: 640px) 100vw, 50vw"
                         />
+                        {client === 'course-work' && (
+                            <span
+                                className="absolute right-0 top-0 z-10 p-2 flex items-center justify-center rounded-bl-lg bg-ctp-peach/90 text-[10px] font-semibold uppercase tracking-wide text-ctp-base shadow-md"
+                                aria-label="Coursework project"
+                            >
+                                Coursework
+                            </span>
+                        )}
                         <span
                             className="pointer-events-none absolute inset-0 bg-ctp-peach/25 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                             aria-hidden
