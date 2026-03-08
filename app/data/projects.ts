@@ -28,6 +28,7 @@ export interface Project {
     longDescription?: LongDescription;
     /** Extra screenshots for the detail page gallery. Optional. */
     gallery?: string[];
+    client?: 'course-work' | 'client';
 }
 
 export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
@@ -62,10 +63,10 @@ export const projects: Project[] = [
     {
         id: 'luxury-travel-agency',
         title: 'Luxury Living Travel Agency Website',
-        category: 'websites',
+        category: 'web-apps',
         description:
             'Luxury Living is a B2B travel company that only works with high-end / luxury hotels & resorts. They take pride in being the only one of our kind in the Indian Subcontinent. They are completely offline & they like to keep it that way.',
-        techStack: ['react', 'javascript'],
+        techStack: ['react', 'javascript', 'python', 'drf', 'aws'],
         liveUrl: 'https://luxuryliving.in',
         image: '/projects/luxury-living.png',
     },
@@ -75,7 +76,7 @@ export const projects: Project[] = [
         category: 'websites',
         description:
             'Ocean Hugs is a Delhi-based travel agency specializing in personalized honeymoon and tour packages. The site showcases their bespoke itinerary services, highlights key offerings, and serves as a digital gateway for travelers exploring Greater Kailash and beyond.',
-        techStack: ['html', 'css', 'javascript'],
+        techStack: ['html', 'css', 'javascript', 'aws'],
         liveUrl: 'https://oceanhugs.in',
         image: '/projects/ocean-hugs.png',
     },
@@ -84,17 +85,48 @@ export const projects: Project[] = [
         title: 'Ashoka International: Full-Service Moving & Relocation Website',
         category: 'websites',
         description: 'Ashoka International is an established full-service moving and logistics company headquartered in New Delhi, India. Operating since 1978, the company specializes in global relocations, freight forwarding, and move management for both individual and corporate clients.',
-        techStack: ['html', 'css', 'javascript'],
+        techStack: ['html', 'css', 'javascript', 'aws'],
         liveUrl: 'https://ashokaint.com',
         image: '/projects/ashoka-international.png',
+    },
+    {
+        id: 'omnifood',
+        title: 'Omnifood: Meal Planning & Delivery Service Website',
+        category: 'websites',
+        description: 'Omnifood is a meal planning and delivery service that delivers healthy, delicious meals to your door.',
+        techStack: ['html', 'css', 'javascript', 'netlify'],
+        liveUrl: 'https://omnifood.amanrwt.com',
+        repoUrl: 'https://github.com/aman-git-r/omnifood',
+        image: '/projects/omnifood.png',
+        client: 'course-work'
+    },
+    {
+        id: 'natours',
+        title: 'Natours: Nature Tours Booking Website',
+        category: 'websites',
+        description: 'Natours is a nature tours booking website that allows you to book nature tours and activities.',
+        techStack: ['html', 'css', 'sass', 'javascript', 'netlify'],
+        liveUrl: 'https://natours.amanrwt.com',
+        image: '/projects/natours/natours.png',
+        repoUrl: 'https://github.com/aman-git-r/natours',
+        longDescription: {
+            problem:
+                'The client needed a website that would allow users to book nature tours and activities.',
+            approach:
+                'We used HTML, CSS, and JavaScript to create a website that would allow users to book nature tours and activities.',
+            outcome:
+                'A website that allows users to book nature tours and activities.',
+        },
+        gallery: ['/projects/natours/natours.png', '/projects/natours/natours-menu.png'],
+        client: 'course-work'
     },
     {
         id: 'vibe-chords',
         title: 'Vibe Chords: AI-Powered Music Chord Generator',
         category: 'ai-projects',
         description: 'Vibe Chords is an AI-powered music chord generator that generates chords based on the given music vibe.',
-        techStack: ['nextjs',  'typescript', 'geminiApi', 'tailwindcss', 'netlify'],
-        liveUrl: 'https://vibe-chords.amanrwt.app',
+        techStack: ['nextjs', 'shadcn', 'typescript', 'geminiApi', 'tailwindcss', 'netlify'],
+        liveUrl: 'https://vibe-chords.amanrwt.com',
         image: '/projects/vibe-chords.png',
     },
 ];

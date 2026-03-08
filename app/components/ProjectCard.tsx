@@ -34,7 +34,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         />
                     </div>
                 </div>
-                <h3 className="mt-4 text-xl font-medium text-ctp-text transition-colors duration-200 group-hover:text-ctp-peach">
+                <h3 className="mt-4 text-xl line-clamp-2 font-medium text-ctp-text transition-colors duration-200 group-hover:text-ctp-peach">
                     {title}
                 </h3>
             </Link>
