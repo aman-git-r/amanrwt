@@ -28,7 +28,7 @@ export interface Project {
     longDescription?: LongDescription;
     /** Extra screenshots for the detail page gallery. Optional. */
     gallery?: string[];
-    client?: 'course-work' | 'client';
+    client?: 'course-work' | 'client' | 'personal-project';
 }
 
 export const PROJECT_CATEGORIES: { value: ProjectCategory; label: string }[] = [
@@ -111,14 +111,14 @@ export const projects: Project[] = [
         repoUrl: 'https://github.com/aman-git-r/natours',
         longDescription: {
             problem:
-                'The client needed a website that would allow users to book nature tours and activities.',
+                'I wanted to create a website that would allow users to book nature tours and activities.',
             approach:
-                'We used HTML, CSS, and JavaScript to create a website that would allow users to book nature tours and activities.',
+                'I used HTML, CSS, and JavaScript to create a website that would allow users to book nature tours and activities.',
             outcome:
-                'A website that allows users to book nature tours and activities.',
+                'A website that allows users to book nature tours and activities. I learned a lot about HTML, CSS, and JavaScript while creating this project.',
         },
         gallery: ['/projects/natours/natours.png', '/projects/natours/natours-menu.png'],
-        client: 'course-work'
+        client: 'course-work',
     },
     {
         id: 'vibe-chords',
@@ -128,5 +128,15 @@ export const projects: Project[] = [
         techStack: ['nextjs', 'shadcn', 'typescript', 'geminiApi', 'tailwindcss', 'netlify'],
         liveUrl: 'https://vibe-chords.amanrwt.com',
         image: '/projects/vibe-chords.png',
+        repoUrl: 'https://github.com/aman-git-r/vibe-chords',
+        client: 'personal-project',
+        longDescription: {
+            problem:
+                'I wanted to create a web-application that would allow users to generate chords based on the given music vibe.',
+            approach:
+                'I used Next.js, Shadcn, TypeScript, Gemini API, Tailwind CSS, and Netlify to create a web-application that would allow users to generate chords based on the given music vibe.',
+            outcome:
+                'A web-application that allows users to generate chords based on the given music vibe.',
+        }
     },
 ];
